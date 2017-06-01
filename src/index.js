@@ -24,7 +24,10 @@ const run = Promise.coroutine(function* (ctx) {
     base: base.sha,
     head: head.sha
   })
+
+  // We could be dealing with some kind of monorepo that has several package.json files
   let files = diff.files.filter(el => el.status === 'modified' && /^package\.json$/.test(el.filename))
+
   if (!files.length) {
     return {message: 'no dependencies changed'}
   }
@@ -48,7 +51,6 @@ const run = Promise.coroutine(function* (ctx) {
     return {name: file.name, dependencies}
   })
 
-  // check once more if there are any dependency changes
   for (let index = 0; index < files.length; index++) {
     if (!files[index].dependencies.length) {
       return {message: 'no dependencies changed'}
@@ -59,7 +61,6 @@ const run = Promise.coroutine(function* (ctx) {
 
   // dry-run
   if (ctx.query.dry) {
-    console.log(commentBody) // eslint-disable-line
     return {message: commentBody}
   }
 

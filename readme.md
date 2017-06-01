@@ -1,8 +1,8 @@
 This bot is designed to check any github pull requests for changes to `package.json` dependencies and post the results in a comment.
 
-> xxxxxxx...yyyyyyy package dependencies updated
+> xxxxxxx...yyyyyyy includes dependency changes!
 >
-> "package.json" *(1 added, 1 modified, 1 removed)*:
+> "package.json" *(2 modified, 1 added, 1 removed)*:
 > ```
 > + honeybee@^2.0.0 (from ^1.0.0)
 > + bluebird@2.0.0
