@@ -1,4 +1,4 @@
-This bot is designed to check any github pull requests for changes to `package.json` dependencies and post the results in a comment.
+This bot is designed to check any github pull requests for changes to `package.json` dependencies and post the results in a comment. See [pull #1](https://github.com/cody-greene/dependency-bot/pull/1) as an example.
 
 > xxxxxxx...yyyyyyy includes dependency changes!
 >
