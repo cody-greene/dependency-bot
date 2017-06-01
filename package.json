@@ -1,0 +1,23 @@
+{
+  "name": "dependency-bot",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "browserify --node --no-bundle-external -s wt src/index.js >webtask.js",
+    "update": "npm run build && wt update dependency-bot webtask.js"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": "./node_modules/@cody-greene/eslint-config/strict.yml",
+    "env": {"node": true, "es6": true}
+  },
+  "dependencies": {
+    "bluebird": "^3.5.0",
+    "honeybee": "^1.1.0",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "@cody-greene/eslint-config": "3.3.1",
+    "browserify": "^14.4.0"
+  }
+}
